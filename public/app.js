@@ -12,7 +12,7 @@ window.onload = function () {
             main(countries);
         }
     }
-    request.send(null);
+        request.send(null);
 };
 
 var main = function (countries) {
@@ -51,15 +51,22 @@ var populateSelect = function (countries) {
 
 var updateDisplay = function (country) {
     var tags = document.querySelectorAll('#info p');
-    tags[0].innerText = country.name;
-    tags[1].innerText = country.population;
-    tags[2].innerText = country.capital;
+    tags[0].innerText = "Country:    " + country.name;
+    tags[1].innerText = "Population: " + country.population;
+    tags[2].innerText = "Capital:    " + country.capital;
 }
 
 var displayMap = function(country) {
     var lat = country.latlng[0];
     var lng = country.latlng[1];
+    var info = "Region: " + country.region;
     var center = {lat: lat, lng: lng};
     var map = new Map(center, zoom);
     map.addMarker( { lat:lat, lng: lng }) ;
+    map.bindClick();
+    map.addInfoWindow( center, info); 
 }
+
+//  "region": "Europe",
+
+// map.addInfoWindow( center, 'My Info Window');

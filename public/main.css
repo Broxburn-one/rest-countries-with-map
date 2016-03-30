@@ -1,6 +1,15 @@
-/*we need to give the div#map a height or we won't see anything*/
+#text {
+  float: left;
+  margin-left: 90px;
+  margin-top: 50px;
+}
+
+
+
 #map {
   height: 500px;
   width: 500px;
-  margin: auto;
+   margin-right: 100px;
+   margin-top: 30px;
+  float: right;
 }
